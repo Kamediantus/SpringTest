@@ -34,7 +34,7 @@ public class Controller {
         petModel.remove(id.get("id"));
         return "Питомец удален.";
     }
-    @PostMapping(value = "/putPet", consumes = "application/json", produces = "application/json")
+    @PutMapping(value = "/putPet", consumes = "application/json", produces = "application/json")
     public String putPet(@RequestBody ExchangePet exchangePet){
         exchangePet.exchange(exchangePet.getId(), exchangePet.getName(), exchangePet.getType(), exchangePet.getAge());
         return "Питомец удален. А новый создан.";
